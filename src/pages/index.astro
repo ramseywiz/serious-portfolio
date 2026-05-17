@@ -1,17 +1,583 @@
 ---
+const experiences = [
+	{
+		title: "Software Engineer",
+		company: "JPMorgan Chase",
+		date: "2025 - Present",
+		description:
+			"Building backend services for payment infrastructure that moves billions of dollars daily. Focused on the boring stuff that has to stay correct when the rest of the system is on fire.",
+	},
+	{
+		title: "Software Development Intern",
+		company: "HCSS",
+		date: "May 2025",
+		description:
+			"Shipped features for construction estimating tools relied on by contractors across the country. Got comfortable working inside a large, long-lived codebase fast.",
+	},
+];
 
+const projects = [
+	{
+		name: "Destiny 2 Leaderboard",
+		description:
+			"A live tracker for raid clears and player stats. Sortable rankings, a custom rating system, and a backend that doesn't fall over when a new season drops.",
+		stack: ["react", "typescript", "asp.net", "mysql"],
+		href: "https://github.com/ramseywiz",
+	},
+	{
+		name: "Uhtceare",
+		description:
+			"A multiplayer Roblox horror experience set in the uneasy hours before dawn. Old English for the dread you feel waiting for morning.",
+		stack: ["lua", "roblox"],
+		href: "https://github.com/ramseywiz",
+	},
+];
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>ramseyc.dev - fullstack engineer</title>
+		<meta
+			name="description"
+			content="Ramsey Chandoklow - fullstack engineer based in Houston, TX. Building things that hold up at scale."
+		/>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<nav>
+			<a href="/" class="brand">ramseyc.dev</a>
+			<div class="nav-links">
+				<a href="#work">work</a>
+				<span aria-hidden="true">/</span>
+				<a href="#experience">experience</a>
+				<span aria-hidden="true">/</span>
+				<a href="#contact">contact</a>
+			</div>
+		</nav>
+
+		<main>
+			<section class="hero">
+				<p class="eyebrow">Fullstack engineer - Houston, TX</p>
+				<h1>I build things that hold up at scale.</h1>
+				<p class="lead">
+					I'm Ramsey Chandoklow, a software engineer who cares about
+					systems that stay reliable when the traffic shows up. Currently
+					shipping payment infrastructure at JPMorgan Chase.
+				</p>
+				<div class="cta">
+					<a href="#contact" class="btn btn-solid">Get in touch</a>
+					<a href="#work" class="btn btn-outline">See my work</a>
+				</div>
+			</section>
+
+			<hr />
+
+			<section id="experience">
+				<p class="label">Experience</p>
+				<ul class="exp">
+					{
+						experiences.map((e) => (
+							<li>
+								<div class="exp-head">
+									<h3>{e.title}</h3>
+									<span class="date">{e.date}</span>
+								</div>
+								<p class="company">{e.company}</p>
+								<p class="desc">{e.description}</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<hr />
+
+			<section id="work">
+				<p class="label">Projects</p>
+				<div class="projects">
+					{
+						projects.map((p) => (
+							<article class="project">
+								<h3>
+									<a
+										href={p.href}
+										target="_blank"
+										rel="noopener"
+										aria-label={`${p.name} opens in a new tab`}
+									>
+										{p.name}
+										<svg
+											viewBox="0 0 24 24"
+											width="15"
+											height="15"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											aria-hidden="true"
+										>
+											<path d="M7 17 17 7"></path>
+											<path d="M8 7h9v9"></path>
+										</svg>
+									</a>
+								</h3>
+								<p class="project-desc">{p.description}</p>
+								<p class="stack">
+									<span class="prefix">//</span>
+									{p.stack.map((s) => (
+										<span class="tech">{s}</span>
+									))}
+								</p>
+							</article>
+						))
+					}
+				</div>
+			</section>
+
+			<hr />
+
+			<section id="contact" class="contact">
+				<p class="label">Contact</p>
+				<div class="contact-links">
+					<a
+						href="https://github.com/ramseywiz"
+						class="btn btn-outline btn-icon"
+						target="_blank"
+						rel="noopener"
+						aria-label="GitHub"
+						title="GitHub"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="20"
+							height="20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39s1.97.13 2.89.39c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.65 18.85.5 12 .5z"
+							></path>
+						</svg>
+					</a>
+					<a
+						href="mailto:hello@ramseyc.dev"
+						class="btn btn-outline btn-icon"
+						aria-label="Email"
+						title="Email"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="20"
+							height="20"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<rect x="3" y="5" width="18" height="14" rx="2"
+							></rect>
+							<path d="m3 7 9 6 9-6"></path>
+						</svg>
+					</a>
+					<a
+						href="https://www.linkedin.com/in/ramseycha/"
+						class="btn btn-outline btn-icon"
+						target="_blank"
+						rel="noopener"
+						aria-label="LinkedIn"
+						title="LinkedIn"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="20"
+							height="20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S.02 4.88.02 3.5 1.14 1 2.5 1s2.48 1.12 2.48 2.5zM.33 8h4.33v14H.33V8zm7.17 0h4.15v1.91h.06c.58-1.1 2-2.26 4.11-2.26 4.39 0 5.2 2.89 5.2 6.65V22h-4.33v-6.81c0-1.62-.03-3.71-2.26-3.71-2.27 0-2.62 1.77-2.62 3.59V22H7.5V8z"
+							></path>
+						</svg>
+					</a>
+					<a
+						href="/resume.pdf"
+						class="btn btn-outline btn-icon"
+						aria-label="Resume"
+						title="Resume"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="20"
+							height="20"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path
+								d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+							></path>
+							<path d="M14 3v6h6"></path>
+							<path d="M9 13h6M9 17h6"></path>
+						</svg>
+					</a>
+				</div>
+			</section>
+
+			<footer>
+				<p>
+					&copy; {new Date().getFullYear()} ramseyc.dev, Built by Ramsey
+					Chandoklow. All rights reserved.
+				</p>
+			</footer>
+		</main>
+
+		<style>
+			:root {
+				--bg: #1c0f07;
+				--text: #ede4d3;
+				--muted: rgba(237, 228, 211, 0.7);
+				--accent: #c87941;
+				--border: rgba(237, 228, 211, 0.1);
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				background: var(--bg);
+				color: var(--text);
+				font-family:
+					-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+					sans-serif;
+				font-size: 16px;
+				line-height: 1.6;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			/* nav */
+			nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1.5rem 2rem;
+				border-bottom: 1px solid var(--border);
+			}
+
+			.brand {
+				font-weight: 600;
+				letter-spacing: -0.01em;
+			}
+
+			.nav-links {
+				display: flex;
+				gap: 0.6rem;
+				align-items: center;
+				color: var(--muted);
+				font-size: 0.9rem;
+			}
+
+			.nav-links a {
+				transition: color 0.15s ease;
+			}
+
+			.nav-links a:hover {
+				color: var(--accent);
+			}
+
+			/* sections */
+			section {
+				max-width: 880px;
+				margin: 0 auto;
+				padding: 5rem 2rem;
+			}
+
+			.hero {
+				padding: 6rem 2rem 5rem;
+			}
+
+			hr {
+				border: none;
+				border-top: 0.5px solid var(--border);
+				margin: 0 2rem;
+			}
+
+			/* hero */
+			.eyebrow {
+				color: var(--accent);
+				font-size: 0.75rem;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				margin-bottom: 1.5rem;
+			}
+
+			.hero h1 {
+				font-size: clamp(2.25rem, 5vw, 3.5rem);
+				line-height: 1.1;
+				letter-spacing: -0.02em;
+				font-weight: 600;
+				margin-bottom: 1.5rem;
+				max-width: 18ch;
+			}
+
+			.lead {
+				color: var(--muted);
+				font-size: 1.05rem;
+				max-width: 52ch;
+				margin-bottom: 2.5rem;
+			}
+
+			.cta {
+				display: flex;
+				gap: 0.75rem;
+				flex-wrap: wrap;
+			}
+
+			/* buttons */
+			.btn {
+				display: inline-block;
+				padding: 0.7rem 1.2rem;
+				font-size: 0.9rem;
+				font-weight: 500;
+				border-radius: 4px;
+				transition:
+					background 0.15s ease,
+					color 0.15s ease,
+					opacity 0.15s ease;
+			}
+
+			.btn-solid {
+				background: var(--accent);
+				color: var(--bg);
+			}
+
+			.btn-solid:hover {
+				opacity: 0.88;
+			}
+
+			.btn-outline {
+				border: 1px solid var(--accent);
+				color: var(--accent);
+			}
+
+			.btn-outline:hover {
+				background: var(--accent);
+				color: var(--bg);
+			}
+
+			/* section label */
+			.label {
+				color: var(--accent);
+				font-size: 0.82rem;
+				font-weight: 600;
+				letter-spacing: 0.15em;
+				text-transform: uppercase;
+				margin-bottom: 2.5rem;
+			}
+
+			/* experience */
+			.exp {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 3rem;
+			}
+
+			.exp-head {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				gap: 1rem;
+				margin-bottom: 0.25rem;
+			}
+
+			.exp h3 {
+				font-size: 1.1rem;
+				font-weight: 500;
+			}
+
+			.date {
+				color: var(--muted);
+				font-size: 0.85rem;
+				white-space: nowrap;
+			}
+
+			.company {
+				color: var(--accent);
+				font-size: 0.95rem;
+				margin-bottom: 0.75rem;
+			}
+
+			.desc {
+				color: var(--muted);
+				max-width: 60ch;
+			}
+
+			/* projects */
+			.projects {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				background: var(--bg);
+				border-top: 1px solid var(--border);
+				border-bottom: 1px solid var(--border);
+			}
+
+			.project {
+				padding: 2rem;
+			}
+
+			.project + .project {
+				border-left: 1px solid var(--border);
+			}
+
+			.project h3 {
+				font-size: 1.1rem;
+				font-weight: 500;
+				margin-bottom: 0.75rem;
+			}
+
+			.project h3 a {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4rem;
+				transition: color 0.15s ease;
+			}
+
+			.project h3 a:hover {
+				color: var(--accent);
+			}
+
+			.project h3 svg {
+				flex: 0 0 auto;
+			}
+
+			.project-desc {
+				color: var(--muted);
+				margin-bottom: 1.5rem;
+				max-width: 38ch;
+			}
+
+			.stack {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4rem;
+				align-items: baseline;
+				font-family:
+					ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+				font-size: 0.75rem;
+				color: var(--muted);
+			}
+
+			.stack .prefix {
+				color: var(--accent);
+			}
+
+			.stack .tech:not(:last-child)::after {
+				content: "/";
+				color: var(--accent);
+				margin-left: 0.4rem;
+			}
+
+			/* contact */
+			.contact {
+				display: flex;
+				align-items: center;
+				gap: 1.25rem;
+				padding-top: 2.5rem;
+				padding-bottom: 2.5rem;
+			}
+
+			.contact .label {
+				margin-bottom: 0;
+			}
+
+			.contact-links {
+				display: flex;
+				gap: 0.6rem;
+				flex-wrap: wrap;
+			}
+
+			.btn-icon {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0.6rem;
+				line-height: 0;
+			}
+
+			.btn-icon svg {
+				display: block;
+			}
+
+			/* footer */
+			footer {
+				max-width: 880px;
+				margin: 0 auto;
+				padding: 1.25rem 2rem 1.5rem;
+				color: var(--muted);
+				font-size: 0.72rem;
+			}
+
+			/* responsive */
+			@media (max-width: 640px) {
+				nav {
+					padding: 1.25rem 1.5rem;
+				}
+				section,
+				footer {
+					padding-left: 1.5rem;
+					padding-right: 1.5rem;
+				}
+				.hero {
+					padding: 4rem 1.5rem 3rem;
+				}
+				section {
+					padding-top: 3.5rem;
+					padding-bottom: 3.5rem;
+				}
+				.contact {
+					padding-top: 2rem;
+					padding-bottom: 2rem;
+				}
+				hr {
+					margin: 0 1.5rem;
+				}
+				.projects {
+					grid-template-columns: 1fr;
+				}
+				.project + .project {
+					border-left: none;
+					border-top: 1px solid var(--border);
+				}
+				.exp-head {
+					flex-direction: column;
+					gap: 0.25rem;
+					align-items: flex-start;
+				}
+			}
+		</style>
 	</body>
 </html>
