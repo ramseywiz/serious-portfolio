@@ -1,18 +1,18 @@
 ---
 const experiences = [
 	{
-		title: "Software Engineer",
+		title: "Software Engineer Intern",
 		company: "JPMorgan Chase",
-		date: "2025 - Present",
+		date: "May 2026 - Present",
 		description:
-			"Building backend services for payment infrastructure that moves billions of dollars daily. Focused on the boring stuff that has to stay correct when the rest of the system is on fire.",
+			"Working on backend services for risk management profiling that handle billions of dollars in transactions daily, requiring a focus on reliability, scalability, and security.",
 	},
 	{
 		title: "Software Development Intern",
 		company: "HCSS",
-		date: "May 2025",
+		date: "May 2025 - May 2026",
 		description:
-			"Shipped features for construction estimating tools relied on by contractors across the country. Got comfortable working inside a large, long-lived codebase fast.",
+			"Shipped features for construction estimating tools relied on by contractors across the globe. Got comfortable working inside a large, complex codebase and collaborating with a team of engineers, product managers, and even users.",
 	},
 ];
 
@@ -20,14 +20,14 @@ const projects = [
 	{
 		name: "Destiny 2 Leaderboard",
 		description:
-			"A live tracker for raid clears and player stats. Sortable rankings, a custom rating system, and a backend that doesn't fall over when a new season drops.",
+			"A live tracker for dungeon clears and player stats, easily parsable with quick lookups.",
 		stack: ["react", "typescript", "asp.net", "mysql"],
 		href: "https://github.com/ramseywiz",
 	},
 	{
 		name: "Uhtceare",
 		description:
-			"A multiplayer Roblox horror experience set in the uneasy hours before dawn. Old English for the dread you feel waiting for morning.",
+			"A multiplayer Roblox RPG experience set in the uneasy hours before dawn. We made it to alpha build with over 2,000 purchases. A demo is available for play.",
 		stack: ["lua", "roblox"],
 		href: "https://github.com/ramseywiz",
 	},
@@ -40,19 +40,19 @@ const projects = [
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<title>ramseyc.dev - fullstack engineer</title>
+		<title>ramsey's portfolio</title>
 		<meta
 			name="description"
-			content="Ramsey Chandoklow - fullstack engineer based in Houston, TX. Building things that hold up at scale."
+			content="Ramsey Chandoklow - fullstack engineer based in Houston, TX. Building things for clients of all scopes, from small businesses to large enterprises. Experienced in React, Node.js, .NET, and more."
 		/>
 	</head>
 	<body>
 		<nav>
 			<a href="/" class="brand">ramseyc.dev</a>
 			<div class="nav-links">
-				<a href="#work">work</a>
-				<span aria-hidden="true">/</span>
 				<a href="#experience">experience</a>
+				<span aria-hidden="true">/</span>
+				<a href="#work">projects</a>
 				<span aria-hidden="true">/</span>
 				<a href="#contact">contact</a>
 			</div>
@@ -60,12 +60,16 @@ const projects = [
 
 		<main>
 			<section class="hero">
-				<p class="eyebrow">Fullstack engineer - Houston, TX</p>
-				<h1>I build things that hold up at scale.</h1>
+				<p class="eyebrow">Fullstack software engineer - Houston, TX</p>
+				<h1>
+					I build websites and tools that help small businesses get
+					online and grow.
+				</h1>
 				<p class="lead">
-					I'm Ramsey Chandoklow, a software engineer who cares about
-					systems that stay reliable when the traffic shows up. Currently
-					shipping payment infrastructure at JPMorgan Chase.
+					I'm Ramsey Chandoklow, a fullstack engineer based in
+					Houston, TX. Whether you need a website to promote your
+					business, a booking system, or a custom solution, I build it
+					cleanly and get it done.
 				</p>
 				<div class="cta">
 					<a href="#contact" class="btn btn-solid">Get in touch</a>
@@ -76,7 +80,7 @@ const projects = [
 			<hr />
 
 			<section id="experience">
-				<p class="label">Experience</p>
+				<p class="label">Industry Experience</p>
 				<ul class="exp">
 					{
 						experiences.map((e) => (
@@ -120,8 +124,8 @@ const projects = [
 											stroke-linejoin="round"
 											aria-hidden="true"
 										>
-											<path d="M7 17 17 7"></path>
-											<path d="M8 7h9v9"></path>
+											<path d="M7 17 17 7" />
+											<path d="M8 7h9v9" />
 										</svg>
 									</a>
 								</h3>
@@ -141,30 +145,10 @@ const projects = [
 			<hr />
 
 			<section id="contact" class="contact">
-				<p class="label">Contact</p>
+				<p class="label">Contact / Links</p>
 				<div class="contact-links">
 					<a
-						href="https://github.com/ramseywiz"
-						class="btn btn-outline btn-icon"
-						target="_blank"
-						rel="noopener"
-						aria-label="GitHub"
-						title="GitHub"
-					>
-						<svg
-							viewBox="0 0 24 24"
-							width="20"
-							height="20"
-							fill="currentColor"
-							aria-hidden="true"
-						>
-							<path
-								d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39s1.97.13 2.89.39c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.65 18.85.5 12 .5z"
-							></path>
-						</svg>
-					</a>
-					<a
-						href="mailto:hello@ramseyc.dev"
+						href="mailto:ramchandoklow@gmail.com"
 						class="btn btn-outline btn-icon"
 						aria-label="Email"
 						title="Email"
@@ -206,6 +190,26 @@ const projects = [
 						</svg>
 					</a>
 					<a
+						href="https://github.com/ramseywiz"
+						class="btn btn-outline btn-icon"
+						target="_blank"
+						rel="noopener"
+						aria-label="GitHub"
+						title="GitHub"
+					>
+						<svg
+							viewBox="0 0 24 24"
+							width="20"
+							height="20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
+								d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39s1.97.13 2.89.39c2.21-1.49 3.18-1.18 3.18-1.18.62 1.58.23 2.75.11 3.04.73.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12 24 5.65 18.85.5 12 .5z"
+							></path>
+						</svg>
+					</a>
+					<a
 						href="/resume.pdf"
 						class="btn btn-outline btn-icon"
 						aria-label="Resume"
@@ -234,8 +238,7 @@ const projects = [
 
 			<footer>
 				<p>
-					&copy; {new Date().getFullYear()} ramseyc.dev, Built by Ramsey
-					Chandoklow. All rights reserved.
+					&copy; {new Date().getFullYear()} ramseyc.dev. All rights reserved.
 				</p>
 			</footer>
 		</main>
@@ -310,7 +313,7 @@ const projects = [
 
 			/* sections */
 			section {
-				max-width: 880px;
+				max-width: 940px;
 				margin: 0 auto;
 				padding: 5rem 2rem;
 			}
@@ -328,7 +331,7 @@ const projects = [
 			/* hero */
 			.eyebrow {
 				color: var(--accent);
-				font-size: 0.75rem;
+				font-size: 1rem;
 				letter-spacing: 0.15em;
 				text-transform: uppercase;
 				margin-bottom: 1.5rem;
@@ -340,13 +343,13 @@ const projects = [
 				letter-spacing: -0.02em;
 				font-weight: 600;
 				margin-bottom: 1.5rem;
-				max-width: 18ch;
+				max-width: 24ch;
 			}
 
 			.lead {
 				color: var(--muted);
 				font-size: 1.05rem;
-				max-width: 52ch;
+				max-width: 64ch;
 				margin-bottom: 2.5rem;
 			}
 
@@ -360,8 +363,8 @@ const projects = [
 			.btn {
 				display: inline-block;
 				padding: 0.7rem 1.2rem;
-				font-size: 0.9rem;
-				font-weight: 500;
+				font-size: 0.95rem;
+				font-weight: 600;
 				border-radius: 4px;
 				transition:
 					background 0.15s ease,
@@ -391,7 +394,7 @@ const projects = [
 			/* section label */
 			.label {
 				color: var(--accent);
-				font-size: 0.82rem;
+				font-size: 0.88rem;
 				font-weight: 600;
 				letter-spacing: 0.15em;
 				text-transform: uppercase;
@@ -504,7 +507,8 @@ const projects = [
 			/* contact */
 			.contact {
 				display: flex;
-				align-items: center;
+				align-items: flex-start;
+				flex-direction: column;
 				gap: 1.25rem;
 				padding-top: 2.5rem;
 				padding-bottom: 2.5rem;
@@ -536,7 +540,7 @@ const projects = [
 			footer {
 				max-width: 880px;
 				margin: 0 auto;
-				padding: 1.25rem 2rem 1.5rem;
+				padding: 0rem 0rem 1.5rem;
 				color: var(--muted);
 				font-size: 0.72rem;
 			}
