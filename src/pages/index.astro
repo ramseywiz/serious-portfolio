@@ -5,27 +5,32 @@ const experiences = [
 		company: "JPMorgan Chase",
 		date: "May 2026 - Present",
 		description:
-			"Working on backend services for risk management profiling that handle billions of dollars in transactions daily, requiring a focus on reliability, scalability, and security.",
+			"Building backend services for payment infrastructure that moves billions of dollars daily. Focused on reliability and correctness under load.",
+		stack: ["java", "spring boot", "mysql", "aws"],
 	},
 	{
 		title: "Software Development Intern",
 		company: "HCSS",
 		date: "May 2025 - May 2026",
 		description:
-			"Shipped features for construction estimating tools relied on by contractors across the globe. Got comfortable working inside a large, complex codebase and collaborating with a team of engineers, product managers, and even users.",
+			"Shipped features for construction estimating tools relied on by contractors across the country. Got comfortable working inside a large, long-lived codebase fast.",
+		stack: ["c#", ".net", "react", "typescript", "mysql", "azure"],
 	},
 ];
 
 const projects = [
 	{
-		name: "Liam's Auto Works",
+		name: "Destiny 2 Leaderboard",
 		description:
-			"A website with appointment scheduling as well as service overviews.",
+			"A live tracker for raid clears and player stats. Sortable rankings, a custom rating system, and a backend that doesn't fall over when a new season drops.",
+		stack: ["react", "typescript", "asp.net", "mysql"],
 		href: "https://github.com/ramseywiz",
 	},
 	{
-		name: "Zucchini Pasta Parlor",
-		description: "A website for a restaurant with a digital menu.",
+		name: "Uhtceare",
+		description:
+			"A multiplayer Roblox horror experience set in the uneasy hours before dawn. Old English for the dread you feel waiting for morning.",
+		stack: ["lua", "roblox"],
 		href: "https://github.com/ramseywiz",
 	},
 ];
@@ -37,19 +42,19 @@ const projects = [
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<title>Houston Small Business Web Developer | Ramsey Chandoklow</title>
+		<title>ramseyc.dev - fullstack engineer</title>
 		<meta
 			name="description"
-			content="Ramsey Chandoklow builds clean small business websites, booking systems, and custom business tools for clients in Houston, TX and beyond."
+			content="Ramsey Chandoklow - fullstack engineer based in Houston, TX. Building things that hold up at scale."
 		/>
 		<link rel="canonical" href="https://ramseyc.dev/" />
 		<meta
 			property="og:title"
-			content="Houston Small Business Web Developer | Ramsey Chandoklow"
+			content="Ramsey Chandoklow - Fullstack Engineer"
 		/>
 		<meta
 			property="og:description"
-			content="Clean websites, booking systems, and custom business tools for small businesses in Houston, TX and beyond."
+			content="Fullstack engineer based in Houston, TX. Currently shipping risk infrastructure at JPMorgan Chase."
 		/>
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://ramseyc.dev/" />
@@ -57,20 +62,20 @@ const projects = [
 		<meta name="twitter:card" content="summary" />
 		<meta
 			name="twitter:title"
-			content="Houston Small Business Web Developer | Ramsey Chandoklow"
+			content="Ramsey Chandoklow - Fullstack Engineer"
 		/>
 		<meta
 			name="twitter:description"
-			content="Clean websites, booking systems, and custom business tools for small businesses in Houston, TX and beyond."
+			content="Fullstack engineer based in Houston, TX. Currently shipping risk infrastructure at JPMorgan Chase."
 		/>
 	</head>
 	<body>
 		<nav>
 			<a href="/" class="brand">ramseyc.dev</a>
 			<div class="nav-links">
-				<a href="#experience">experience</a>
+				<a href="#industry">industry</a>
 				<span aria-hidden="true">/</span>
-				<a href="#work">projects</a>
+				<a href="#projects">projects</a>
 				<span aria-hidden="true">/</span>
 				<a href="#contact">contact</a>
 			</div>
@@ -78,17 +83,13 @@ const projects = [
 
 		<main>
 			<section class="hero">
-				<p class="eyebrow">
-					Houston web developer for small businesses
-				</p>
-				<h1>
-					I build websites and tools that help small businesses grow.
-				</h1>
+				<p class="eyebrow">Fullstack engineer - Houston, TX</p>
+				<h1>I build things that hold up at scale.</h1>
 				<p class="lead">
-					Hello! My name's Ramsey Chandoklow, a fullstack engineer in
-					Houston, TX. I build small business websites, booking
-					systems, and custom business tools that are fast, clean, and
-					easy to use.
+					Hello! I'm Ramsey Chandoklow, a 21 year-old software
+					engineer at the Unviersity of Houston. Currently shipping
+					payment infrastructure at JPMorgan Chase, as well as leading
+					the largest computer science club at UH.
 				</p>
 				<div class="cta">
 					<a href="#contact" class="btn btn-solid">Get in touch</a>
@@ -98,8 +99,34 @@ const projects = [
 
 			<hr />
 
+			<section id="experience">
+				<p class="label">Experience</p>
+				<ul class="exp">
+					{
+						experiences.map((e) => (
+							<li>
+								<div class="exp-head">
+									<h3>{e.title}</h3>
+									<span class="date">{e.date}</span>
+								</div>
+								<p class="company">{e.company}</p>
+								<p class="desc">{e.description}</p>
+								<p class="stack">
+									<span class="prefix">//</span>
+									{e.stack.map((s) => (
+										<span class="tech">{s}</span>
+									))}
+								</p>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+
+			<hr />
+
 			<section id="work">
-				<p class="label">Examples of my work</p>
+				<p class="label">Projects</p>
 				<div class="projects">
 					{
 						projects.map((p) => (
@@ -129,30 +156,16 @@ const projects = [
 									</a>
 								</h3>
 								<p class="project-desc">{p.description}</p>
+								<p class="stack">
+									<span class="prefix">//</span>
+									{p.stack.map((s) => (
+										<span class="tech">{s}</span>
+									))}
+								</p>
 							</article>
 						))
 					}
 				</div>
-			</section>
-
-			<hr />
-
-			<section id="experience">
-				<p class="label">Industry Experience</p>
-				<ul class="exp">
-					{
-						experiences.map((e) => (
-							<li>
-								<div class="exp-head">
-									<h3>{e.title}</h3>
-									<span class="date">{e.date}</span>
-								</div>
-								<p class="company">{e.company}</p>
-								<p class="desc">{e.description}</p>
-							</li>
-						))
-					}
-				</ul>
 			</section>
 
 			<hr />
@@ -547,6 +560,7 @@ const projects = [
 			.desc {
 				color: var(--muted);
 				max-width: 60ch;
+				margin-bottom: 1rem;
 			}
 
 			/* projects */
@@ -590,6 +604,28 @@ const projects = [
 			.project-desc {
 				color: var(--muted);
 				max-width: 38ch;
+				margin-bottom: 1.5rem;
+			}
+
+			.stack {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4rem;
+				align-items: baseline;
+				font-family:
+					ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+				font-size: 0.75rem;
+				color: var(--muted);
+			}
+
+			.stack .prefix {
+				color: var(--accent);
+			}
+
+			.stack .tech:not(:last-child)::after {
+				content: "/";
+				color: var(--accent);
+				margin-left: 0.4rem;
 			}
 
 			/* contact */
